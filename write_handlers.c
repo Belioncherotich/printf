@@ -1,9 +1,10 @@
 #include "main.h"
 
-/************************* WRITE HANDLE *************************/
+/*WRITE HANDLE*/
 /**
  * handle_write_char - Prints a string
  * @c: char types.
+ *
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags.
  * @width: get width.
@@ -44,7 +45,7 @@ int handle_write_char(char c, char buffer[],
 	return (write(1, &buffer[0], 1));
 }
 
-/************************* WRITE NUMBER *************************/
+/* WRITE NUMBER AND PRINT STRING*/
 /**
  * write_number - Prints a string
  * @is_negative: Lista of arguments
@@ -77,7 +78,7 @@ int write_number(int is_negative, int ind, char buffer[],
 	return (write_num(ind, buffer, flags, width, precision,
 		length, padd, extra_ch));
 }
-
+/*THIS CODE WILL WRITE NUMBERS USING A BUFFER*/
 /**
  * write_num - Write a number using a bufffer
  * @ind: Index at which the number starts on the buffer
@@ -136,12 +137,11 @@ int write_num(int ind, char buffer[],
 		buffer[--ind] = extra_c;
 	return (write(1, &buffer[ind], length));
 }
-
+/*THIS CODE WILL WRITE UNSIGNED NUMBERS*/
 /**
  * write_unsgnd - Writes an unsigned number
  * @is_negative: Number indicating if the num is negative
  * @ind: Index at which the number starts in the buffer
- * @buffer: Array of chars
  * @flags: Flags specifiers
  * @width: Width specifier
  * @precision: Precision specifier
@@ -194,7 +194,7 @@ int write_unsgnd(int is_negative, int ind,
 
 	return (write(1, &buffer[ind], length));
 }
-
+/* THIS CODE WILL WRITE POINTERS*/
 /**
  * write_pointer - Write a memory address
  * @buffer: Arrays of chars
